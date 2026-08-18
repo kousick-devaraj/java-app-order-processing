@@ -5,7 +5,7 @@ pipeline {
 			steps {
 			sh '''
 				echo "Installing maven version 3"
-				sudo rm -rf /opt/maven
+				rm -rf /opt/maven/*
 				cd /opt/maven
 				wget https://downloads.apache.org/maven/maven-3/3.9.12/binaries/apache-maven-3.9.12-bin.tar.gz
 				tar -xzf apache-maven-3.9.12-bin.tar.gz
