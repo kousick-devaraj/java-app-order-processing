@@ -7,9 +7,9 @@ pipeline {
 				echo "Installing maven version 3"
 				rm -rf /opt/maven/*
 				cd /tmp
-				wget https://downloads.apache.org/maven/maven-3/3.9.12/binaries/apache-maven-3.9.12-bin.tar.gz
-				tar -xzf apache-maven-3.9.12-bin.tar.gz
-				mv apache-maven-3.9.12 /opt/maven
+				wget https://dlcdn.apache.org/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz
+				tar -xzf apache-maven-3.9.16-bin.tar.gz
+				mv apache-maven-3.9.16 /opt/maven
 				/opt/maven/bin/mvn -version
 				'''
 				}
