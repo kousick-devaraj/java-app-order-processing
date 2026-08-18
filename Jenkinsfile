@@ -10,6 +10,7 @@ pipeline {
 				wget https://downloads.apache.org/maven/maven-3/3.9.12/binaries/apache-maven-3.9.12-bin.tar.gz
 				tar -xzf apache-maven-3.9.12-bin.tar.gz
 				/opt/maven/bin/mvn -version
+				'''
 				}
 			}
 		stage('Check out code') {
@@ -21,8 +22,8 @@ pipeline {
 		stage('Build with maven') {
 			steps {
 				sh '/opt/maven/bin/mvn clean package' - Dmaven.test.failure.ignore-true'
-}
-}
+		}
+	}	
 }
 post {
 		success {
