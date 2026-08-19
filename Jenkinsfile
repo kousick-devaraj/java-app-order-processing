@@ -1,9 +1,10 @@
 pipeline {
 	agent any
 	environment {
-		MAVEN_VERSION = "3.9.16"
-		MAVEN_HOME = "/opt/maven/apache-maven-3.9.16"
-		PATH = "/opt/maven/apache-maven-3.9.16/bin:${env.PATH}"
+		MAVEN_VERSION = '3.9.16'
+		MAVEN_HOME = '/opt/maven/apache-maven-3.9.16'
+		PATH = '/opt/maven/apache-maven-3.9.16/bin:${env.PATH}'
+	}
 	stages {
 		stage ('Install Maven'){
 			steps {
@@ -14,7 +15,7 @@ pipeline {
 				#wget https://dlcdn.apache.org/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz
 				#tar -xzf apache-maven-3.9.16-bin.tar.gz
 				#mv apache-maven-3.9.16 /opt/maven
-				/opt/maven/apache-maven-${MAVEN_VERSION}/bin/mvn-version
+				/opt/maven/apache-maven-${MAVEN_VERSION}/bin/mvn -version
 				echo "Maven already installated"
 				'''
 				}
@@ -27,7 +28,7 @@ pipeline {
 
 		stage('Build with maven') {
 			steps {
-				sh 'mvn clean package -Dmaven.test.failure.ignore-true'
+				sh 'mvn clean package -Dmaven.test.failure.ignore=true'
 		}
 	}	
 }
@@ -38,7 +39,6 @@ post {
 }
 failure {
 	echo "Build failed"
-}
 }
 }
 }
