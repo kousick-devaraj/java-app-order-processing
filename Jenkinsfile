@@ -23,7 +23,7 @@ pipeline {
 
 		stage('Build with maven') {
 			steps {
-				sh '/opt/maven/bin/mvn clean package - Dmaven.test.failure.ignore-true'
+				sh '/opt/maven/apache-maven-3.9.16/bin/mvn clean package - Dmaven.test.failure.ignore-true'
 		}
 	}	
 }
