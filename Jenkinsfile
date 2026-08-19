@@ -8,13 +8,13 @@ pipeline {
 		stage ('Install Maven'){
 			steps {
 			sh '''
-				echo "Installing maven version ${MAVEN_VERSION)"
+				echo "Installing maven version ${MAVEN_VERSION}"
 				#rm -rf /opt/maven/*
 				#cd /tmp
 				#wget https://dlcdn.apache.org/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz
 				#tar -xzf apache-maven-3.9.16-bin.tar.gz
 				#mv apache-maven-3.9.16 /opt/maven
-				/opt/maven/apache-maven-${MAVEN_VERSION)/bin/mvn -version
+				/opt/maven/apache-maven-${MAVEN_VERSION}/bin/mvn-version
 				echo "Maven already installated"
 				'''
 				}
