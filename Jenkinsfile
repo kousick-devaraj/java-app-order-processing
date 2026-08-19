@@ -31,7 +31,6 @@ pipeline {
 		}
 	}	
 }
-}
 post {
 		success {
 			junit '**/target/surefire-reports/TEST-*.xml'
@@ -39,6 +38,7 @@ post {
 }
 failure {
 	echo "Build failed"
+}
 }
 }
 }
