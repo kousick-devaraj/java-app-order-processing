@@ -10,7 +10,8 @@ pipeline {
 				#wget https://dlcdn.apache.org/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz
 				#tar -xzf apache-maven-3.9.16-bin.tar.gz
 				#mv apache-maven-3.9.16 /opt/maven
-				/opt/maven/bin/mvn -version
+				/opt/maven/apache-maven-3.9.16/bin -version
+				echo "Maven already installated"
 				'''
 				}
 			}
