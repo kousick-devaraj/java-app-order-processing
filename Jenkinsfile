@@ -4,7 +4,6 @@ pipeline {
 		MAVEN_VERSION="3.9.16"
 		MAVEN_HOME="/opt/maven/apache-maven-3.9.16"
 		PATH="/opt/maven/apache-maven-3.9.16/bin:${env.PATH}"
-} 
 	stages {
 		stage ('Install Maven'){
 			steps {
@@ -31,6 +30,7 @@ pipeline {
 				sh 'mvn clean package -Dmaven.test.failure.ignore-true'
 		}
 	}	
+}
 }
 post {
 		success {
